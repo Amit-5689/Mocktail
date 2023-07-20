@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class NameCocktail extends React.Component {
     
@@ -12,7 +13,7 @@ class NameCocktail extends React.Component {
                     <h5 className="card-title">{title.charAt(0).toUpperCase() + title.slice(1)}</h5>
                     <h6 className="card-subtitile">Instructions</h6>
                     <p className="card-text">{desc.slice(0,85)+"..."}</p>
-                    <button type="button" className="btn btn-info">About Cocktail</button>
+                    <Link to="/named"><button type="button" className="btn btn-info">About Cocktail</button></Link>
                 </div>
             </div>
         </div>);

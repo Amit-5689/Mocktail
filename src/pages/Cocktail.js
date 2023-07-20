@@ -1,5 +1,5 @@
 import React from 'react';
-import NameCocktail from './NameCocktail'
+import NameCocktail from '../Components/NameCocktail'
 
 class News extends React.Component {
     data=[
@@ -140,12 +140,6 @@ class News extends React.Component {
         this.setState({data:data, loading:false})
 
     }
-    handleNextclick=()=>{
-
-    }
-    handlePrevclick=()=>{
-
-    }
     render() {
         return (
         <div className='contianer-fluid my-2' style={{justifyContent:"center"}}>
@@ -158,10 +152,7 @@ class News extends React.Component {
                 })}
                 
             </div>
-            <div className="container d-flex justify-content-between">
-                <button type="button" className="btn btn-secondary" onClick={this.handlePrevclick}> &larr; Previous</button>
-                <button type="button" className="btn btn-secondary" onClick={this.handleNextclick}>Next &rarr; </button>
-            </div>
+            
         </div>);
     }
 }
