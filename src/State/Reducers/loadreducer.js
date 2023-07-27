@@ -1,4 +1,15 @@
-const reducer=(state="martini",action)=>{
-    return action.pagename
+
+let  state =   { data:'sample'}
+
+const AllCocktail=(state =  { data:'sample'} , action)=>{
+
+      switch(action.type) {
+         case "ALL_COCKTAIL" :
+             return  state
+         default :
+        return  state  
+
+            }
+     
 }
-export default reducer;
+export  {AllCocktail};

@@ -1,7 +1,15 @@
 import React from 'react';
 import NameCocktail from '../Components/NameCocktail'
+import Spinner from '../Components/Spinner'
 
 class News extends React.Component {
+    static defaultProps={
+        name:"martini",
+        ingredients:""
+    }
+    static propTypes={
+        name:"martini"
+    }
     data=[
             {
                 "ingredients": [
@@ -125,9 +133,9 @@ class News extends React.Component {
         }
     }
      async componentDidMount(){
-        const name="cocktail"
         const apikey="wxSqjtu9PAwmK4TCxK2jpQ==RQ6cjYQNsxlXsK6b"
-        const apiurl="https://api.api-ninjas.com/v1/cocktail?name="+name
+        const apiurl=`https://api.api-ninjas.com/v1/cocktail?name=${this.props.name}`
+        this.setState({loading:true})
         const options={
             mehtod:"GET",
             headers:{
@@ -136,16 +144,16 @@ class News extends React.Component {
         }
         const response=await fetch(apiurl,options)
         const data=await response.json()
-        console.log(data)
         this.setState({data:data, loading:false})
 
     }
     render() {
         return (
         <div className='contianer-fluid my-2' style={{justifyContent:"center"}}>
-            <h2>Cocktails....</h2>
+            <h2 className='text-center'>Cocktails....</h2>
+            {this.state.loading && <Spinner />}
             <div className="row">
-                {this.state.data.map((element)=>{
+                {!this.state.loading && this.state.data.map((element)=>{
                     return <div className="col-md-3">
                         <NameCocktail key={element.name} title={element.name} desc={element.instructions.slice(0,85)+"..."}/>
                     </div>

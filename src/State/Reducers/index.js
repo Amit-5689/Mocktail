@@ -1,6 +1,8 @@
 import {combineReducers} from "redux";
-import loadreducer from "./loadreducer"
-const reducers=combineReducers({
-    load:loadreducer
+import { AllCocktail } from "./loadreducer";
+
+const root_reducers=combineReducers({
+    temp:AllCocktail
 })
-export default reducers;
+
+export default root_reducers;
