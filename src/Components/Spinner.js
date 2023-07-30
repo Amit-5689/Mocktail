@@ -1,10 +1,10 @@
 import React from 'react';
-import loading from './laoder.gif'
+import loading from './loader.png'
 
 class Spinner extends React.Component {
 
     render() {
-        return <div>
+        return <div className='App-logo'>
             <img src={loading} alt="loading" />
         </div>;
     }
