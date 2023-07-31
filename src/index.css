@@ -1,23 +1,23 @@
 /* body{
     overflow: scroll;
 } */
-.bgContainer{
-    z-index: -2;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    
+.bgContainer {
+  z-index: -2;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
 }
-video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-}
-.content{
-    z-index: -1;
-    position: absolute;
-    width: 90%;
+.content {
+  z-index: -1;
+  position: relative;
+  top: 60px;
+  /* width: 90%;
     height: 100%;
     top: 100%;
     left: 100%;
@@ -27,34 +27,32 @@ video{
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: translate(-105%,-75%);
-    color: white;
-    margin: 0px ;
-    
+    transform: translate(-105%,-75%); */
+  color: white;
+  margin: 0px;
 }
-.overlay{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    
-    background-attachment: fixed;
-    
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  background-attachment: fixed;
 }
 .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin 1.5s linear infinite;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 0.8s linear;
-    }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
+}

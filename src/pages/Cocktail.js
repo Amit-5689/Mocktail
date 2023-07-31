@@ -16,9 +16,12 @@ const Cocktail = (props) => {
     page: 1,
   });
 
+  props.setProgress(30)
+
   const doSomething = async () => {
-    const apikey = "wxSqjtu9PAwmK4TCxK2jpQ==RQ6cjYQNsxlXsK6b";
+    const apikey = process.env.REACT_APP_API_KEY;
     const apiurl = `https://api.api-ninjas.com/v1/cocktail?name=${props.name}`;
+    
 
     setField({ loading: true, page: 1 });
 
@@ -30,17 +33,22 @@ const Cocktail = (props) => {
     };
 
     const response = await fetch(apiurl, options);
+    
 
     newdata({ payload: await response.json() });
 
     setField({ loading: false, page: 1 });
+    
   };
 
   useEffect(() => {
     (async function () {
+      props.setProgress(50)
       await doSomething();
+      props.setProgress(70)
     })();
   }, []);
+  props.setProgress(100)
 
   return (
     <div
